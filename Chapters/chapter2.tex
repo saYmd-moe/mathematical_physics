@@ -21,7 +21,31 @@
         \item 比值判别法\\
                 若存在与$n$无关的常数$\rho$，使得$\left|\dfrac{u_{n+1}}{u_n}\right|<\rho<1$，则级数$\sum_{n=0}^{\infty}u_n$绝对收敛；
                 若$\left|\dfrac{u_{n+1}}{u_n}\right|>\rho>1$，则级数发散.
+        \item $d'Alembert$判别法\\
+                若$\varlimsup_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|<1$，则级数$\sum_{n=0}^{\infty}u_n$绝对收敛；
+                若$\varliminf_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|>1$，则级数发散.
+        \item $Cauchy$判别法\\
+                同$d'Alembert$判别法，只需将$\varlimsup_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|$和$\varliminf_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|$
+                均更换为上极限$\varlimsup{{|u_n|}^{1/n}}$.\\
+                若$d'Alembert$判别法和$Cauchy$判别法中的两式均为$1$，我们可以使用下面的$Gauss$判别法.
+        \item $Gauss$判别法\\
+                若$\lim_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|=1$，我们将邻项比值写成如下形式：
+                \begin{align*}
+                    \frac{u_n}{u_{n+1}}=1+\frac{\mu}{n}+O(n^{-\lambda})
+                \end{align*}
+                这里我们一般通过$Taylor$展开得到.其中$\mu=a+ib,\ \lambda > 1$，若$a>1$，则级数绝对收敛，反之发散.
     \end{enumerate}
+    \begin{example}
+        判断级数$\sum_{n=1}^{\infty}\dfrac{i^n}{n^\alpha}\,(\alpha>0)$的收敛性和绝对收敛性.
+    \end{example}
+    \begin{solution}
+        我们可以看到，$\sum_{n=1}^{\infty}|\dfrac{i^n}{n^\alpha}|=\sum_{n=1}^{\infty}\dfrac{1}{n^\alpha}$，
+        这就是实数项级数中的$p$级数，所以当$\alpha\leq 1$时级数发散，反之绝对收敛.这里我们使用$Gauss$判别法得到相同结论：
+        \begin{align*}
+            \frac{c_n}{c_{n+1}}=\frac{1/n^\alpha}{1/(n+1)^\alpha}=\left( 1+\frac{1}{n} \right)^\alpha=1+\frac{\alpha}{n}+O\left(\frac{1}{n^2}\right)
+        \end{align*}
+        当$\alpha \leq 1$时级数发散，反之收敛.
+    \end{solution}
 
 \section{复幂级数}
     \subsection{复幂级数的定义}
