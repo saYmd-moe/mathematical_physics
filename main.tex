@@ -1,0 +1,30 @@
+\documentclass[lang=cn, titlestyle=display, scheme=chinese]{elegantbook}
+
+\usepackage{amsmath, bbm, graphicx, enumerate}
+\usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+\setmathfont{Garamond-Math.otf}[StylisticSet={7,9}] %设置数学字体
+\graphicspath{{assets/images}{assets/logos}} %设置图片路径
+\pagenumbering{arbic} %设置页码为阿拉伯数字
+%封面设置
+\title{数学物理方法简明讲义}
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\author{saYmd}
+\date{\today}
+\version{a2.0}
+\cover{cover.png}
+\logo{logo.jpg}
+
+\setcounter{tocdepth}{2} %设置目录深度
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \frontmatter
+    \mainmatter
+
+    \include{Chapters/chapter1.tex}
+
+    \include{Chapters/chapter2.tex}
+
+\end{document}
