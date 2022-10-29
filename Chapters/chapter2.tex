@@ -15,25 +15,25 @@
     这里给出复数项级数的审敛定理.
     \begin{enumerate}
         \item 比值判别法\\
-                若$\exists N \subset \mathbbm{N}$，对$\forall n > N$，都有
-                $|u_n| < v_n$，并且$\sum_{n = 0}^{\infty}v_n$收敛，则$\sum_{n=0}^{\infty}|u_n|$收敛，即$\sum_{n=0}^{\infty}u_n$绝对收敛.
-                若$u_n>v_n>0$，且$\sum_{n=0}^{\infty}v_n$发散，则$\sum_{n=0}^{\infty}|u_n|$发散.
+            若$\exists N \subset \mathbbm{N}$，对$\forall n > N$，都有
+            $|u_n| < v_n$，并且$\sum_{n = 0}^{\infty}v_n$收敛，则$\sum_{n=0}^{\infty}|u_n|$收敛，即$\sum_{n=0}^{\infty}u_n$绝对收敛.
+            若$u_n>v_n>0$，且$\sum_{n=0}^{\infty}v_n$发散，则$\sum_{n=0}^{\infty}|u_n|$发散.
         \item 比值判别法\\
-                若存在与$n$无关的常数$\rho$，使得$\left|\dfrac{u_{n+1}}{u_n}\right|<\rho<1$，则级数$\sum_{n=0}^{\infty}u_n$绝对收敛；
-                若$\left|\dfrac{u_{n+1}}{u_n}\right|>\rho>1$，则级数发散.
+            若存在与$n$无关的常数$\rho$，使得$\left|\dfrac{u_{n+1}}{u_n}\right|<\rho<1$，则级数$\sum_{n=0}^{\infty}u_n$绝对收敛；
+            若$\left|\dfrac{u_{n+1}}{u_n}\right|>\rho>1$，则级数发散.
         \item $d'Alembert$判别法\\
-                若$\varlimsup_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|<1$，则级数$\sum_{n=0}^{\infty}u_n$绝对收敛；
-                若$\varliminf_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|>1$，则级数发散.
+            若$\varlimsup_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|<1$，则级数$\sum_{n=0}^{\infty}u_n$绝对收敛；
+            若$\varliminf_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|>1$，则级数发散.
         \item $Cauchy$判别法\\
-                同$d'Alembert$判别法，只需将$\varlimsup_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|$和$\varliminf_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|$
-                均更换为上极限$\varlimsup{{|u_n|}^{1/n}}$.\\
-                若$d'Alembert$判别法和$Cauchy$判别法中的两式均为$1$，我们可以使用下面的$Gauss$判别法.
+            同$d'Alembert$判别法，只需将$\varlimsup_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|$和$\varliminf_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|$
+            均更换为上极限$\varlimsup{{|u_n|}^{1/n}}$.\\
+            若$d'Alembert$判别法和$Cauchy$判别法中的两式均为$1$，我们可以使用下面的$Gauss$判别法.
         \item $Gauss$判别法\\
-                若$\lim_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|=1$，我们将邻项比值写成如下形式：
-                \begin{align*}
-                    \frac{u_n}{u_{n+1}}=1+\frac{\mu}{n}+O(n^{-\lambda})
-                \end{align*}
-                这里我们一般通过$Taylor$展开得到.其中$\mu=a+ib,\ \lambda > 1$，若$a>1$，则级数绝对收敛，反之发散.
+            若$\lim_{n\to\infty}|\dfrac{u_{n+1}}{u_n}|=1$，我们将邻项比值写成如下形式：
+            \begin{align*}
+                \frac{u_n}{u_{n+1}}=1+\frac{\mu}{n}+O(n^{-\lambda})
+            \end{align*}
+            这里我们一般通过$Taylor$展开得到.其中$\mu=a+ib,\ \lambda > 1$，若$a>1$，则级数绝对收敛，反之发散.
     \end{enumerate}
     \begin{example}
         判断级数$\sum_{n=1}^{\infty}\dfrac{i^n}{n^\alpha}\,(\alpha>0)$的收敛性和绝对收敛性.
@@ -48,13 +48,32 @@
     \end{solution}
 
 \section{复幂级数}
-    \subsection{复幂级数的定义}
+    \subsection{复幂级数的定义和性质}
+        \begin{definition}[复幂级数]\label{def:complex_power_series}
+            我们将形如$\sum_{k=0}^{\infty}(z-z_0)^k$的复函数项级数称为复幂级数.
+        \end{definition}
 
-    \subsection{复幂级数的敛散性判断}
+        \begin{proposition}
+            若幂级数$\sum_{k=0}^{\infty}a_k(z - z_0)^k$在点$z_1=\neq z_0$处收敛，则该级数在$|z-z_0|<|z_1-z_0|$处均收敛；
+            同样地，若幂级数$\sum_{k=0}^{\infty}b_k(z - z_0)^{(-k)}$在点$z_2=\neq z_0$处收敛，则该级数在$|z-z_0|>|z_2-z_0|$处均收敛
+        \end{proposition}
 
     \subsection{复幂级数的收敛半径计算}
-
-    \subsection{复幂级数和函数的解析性及其性质}
+        这部分和实幂级数的计算方法完全一样，但是在计算时要时刻提醒自己算的是复数.
+        \begin{enumerate}
+            \item 由$Cauchy$判别法，我们可以得到$Cauchy-Hadamard$公式：
+                \begin{align}
+                    R=\varliminf_{n\to\infty}\left|\frac{1}{c_n}\right|^{1/n}
+                \end{align}
+            \item 由$d'Alembert$判别法，我们可以得到：
+                \begin{align}
+                    R=\lim_{n\to\infty}\left|\frac{c_n}{c_{n+1}}\right|
+                \end{align}
+        \end{enumerate}
+        \begin{remark}
+            $Cauchy-Hdamard$公式在任意条件下均成立，但$d'Alembert$公式要求有$\lim_{n\to\infty}|c_n/c_{n+1}|$存在.
+            求收敛半径时一般先用后者，行不通再使用前者.使用前者时一般要用到重要极限，请牢牢记住$\lim_{f(x)\to\infty}\left(1+\dfrac{1}{f(x)}\right)^{f(x)}=e$.
+        \end{remark}
 
 \section{Taylor级数}
     \subsection{Taylor级数的定义}
