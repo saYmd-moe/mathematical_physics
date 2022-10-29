@@ -112,12 +112,73 @@
 
 \section{Laurent级数}
     \subsection{Laurent级数的定义}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.5\textwidth]{AnnularRegion.png}
+            \caption{展开为$Laurent$级数的函数解析区域}
+            \label{fig:Laurent_series}
+        \end{figure}
+        \begin{definition}[Laurent级数]\label{def:laurent_series}
+            如图\ref{fig:Laurent_series}所示，设$f(z)$在圆环$S$内单值解析，$z$为$S$内任一点，则函数$f(z)$可以展开为幂级数形式.
+            \begin{align*}
+                f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n,\quad a_n=\frac{1}{2\pi i}\oint_{C}\frac{f(\xi)}{(\xi-z_0)^{n+1}}d\xi
+            \end{align*}
+        \end{definition}
+        函数$f(z)$在内圆$C_1$内不解析，但注意$f(z)$在点$z_0$上可能解析也可能不解析.
 
-    \subsection{Laurent级数补充讨论}
+        $Laurent$级数有两部分，其中正幂项在外圆$C_2$内内闭一致收敛，负幂项在内圆$C_1$外绝对收敛.其中负幂项被称为$Laurent$级数的主要部分，当$Laurent$级数没有
+        负幂项时，它就是$Taylor$级数.
 
-    \subsection{常见的Laurent级数}
+
+    \subsection{Laurent级数的计算}
+        废话不多说，直接上例题.
+        \begin{example}
+            将函数$f(z)=\dfrac{2+3z}{z^2+z^3}$在$z=0$点处写成$Laurent$级数的形式.
+        \end{example}
+        \begin{solution}
+            我们有：
+            \begin{align*}
+                f(z)&=\frac{1}{z^2}\left(\frac{2+3z}{1+z}\right)=\frac{1}{z^2}\left(3-\frac{1}{1+z}\right)
+                =\frac{1}{z^2}\left(3-\sum_{n=0}^{\infty}(-1)^nz^n\right)\\
+                &=\frac{1}{z^2}(3-1+z-z^2+z^3-\cdots)=\frac{2}{z^2}+\frac{1}{z}-1+z-z^2+\cdots
+            \end{align*}
+            该级数在$|z|<1$上收敛.
+        \end{solution}
+
+        \begin{example}
+            讨论函数$f(z)=1/(4z-z^2)$的$Laurent$展开.
+        \end{example}
+        \begin{solution}
+            该函数有两个奇点$z=0,\,z=4$.所以我们将该函数分别在$z=0$处和$z=\infty$处展开.
+
+            当$|z|<4$时，我们有$|z/4|<1$：
+            \begin{align*}
+                f(z)=\frac{1}{4z}\left(\frac{1}{1-z/4}\right)=\frac{1}{4z}\sum_{n=0}^{\infty}\left(\frac{z}{4}\right)^n=\sum_{n=0}^{\infty}4^{-n-1}z^{n-1}=\sum_{n=-1}^{\infty}4^{-n-2}z^n.
+            \end{align*}
+
+            当$|z|>4$时，我们有$|4/z|>1$(此时是在点$z=\infty$处展开)：
+            \begin{align*}
+                f(z)=-\frac{1}{z^2}\left(\frac{1}{1-4/z}\right)=-\frac{1}{z^2}\sum_{n=0}^{\infty}4^nz^{-n}=-\sum_{-\infty}^{-2}4^{-n-2}z^{n}.
+            \end{align*}
+        \end{solution}
+
+        从上面这俩例题我们能看到求解$Laurent$级数和使用间接法求解$Taylor$级数十分类似，只是需要注意自变量的取值范围.
 
     \subsection{奇点的分类}
+        定义\ref{def:singular_point}将奇点定义为函数$f$不解析，但在其任意邻域都解析的点，该定义描述的奇点被称为孤立奇点；
+        如果在奇点的任一空心领域上都有函数$f$的奇点，这时该奇点就被称为非孤立奇点.孤立奇点根据函数的$Laurent$级数又可以分为可去奇点、极点和本性奇点.
+        \begin{enumerate}
+            \item 可去奇点\\
+                级数展开式不含负幂项.$f(z)=\sum_{n=0}^{\infty}a_n(z-z_0)^n$
+            \item 极点\\
+                级数展开式含有有限个负幂项，特别的，如果级数展开式含有$m,\ (m\neq \infty)$个负幂项，则称为$m$阶极点.$f(z)=\sum_{n=-m}^{\infty}a_n(z-z_0)^n$
+            \item 本性奇点\\
+                级数展开式含有无穷个负幂项.$f(z)=\sum_{-\infty}^{\infty}a_n(z-z_0)^n$
+        \end{enumerate}
+
+        \begin{note}
+            当我们讨论$f(z)$的无穷远点时，我们可以令$z=1/t$，此时点$t=0$的性质就是点$z=\infty$处的性质.
+        \end{note}
 
 
 \section{解析延拓}
