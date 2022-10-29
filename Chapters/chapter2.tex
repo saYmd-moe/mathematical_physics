@@ -77,10 +77,38 @@
 
 \section{Taylor级数}
     \subsection{Taylor级数的定义}
+        \begin{definition}[Taylor级数]\label{def:taylor_series}
+            设$f(z)$在圆域$C$内解析，$z_0$为$C$内任一点，则函数$f(z)$可以展开为幂级数形式.
+            \begin{align}
+                f(z)=f(z_0)+f'(z_0)(z-z_0)+\cdots
+                =\sum_{n=1}^{\infty}\dfrac{f^{(n)}(z_0)}{n!}(z-z_0)^n
+            \end{align}
+        \end{definition}
+        \begin{definition}[Maclaurin级数]\label{def:maclaurin_series}
+            这里如果取$z_0=0$，我们可以得到$Maclaurin$级数.
+            \begin{align*}
+                f(z)=f(0)+f'(0)z+\cdots=\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}z^n
+            \end{align*}
+        \end{definition}
 
-    \subsection{常见的Taylor级数}
+    \subsection{重要的Taylor级数}
+        这部分请务必牢记，这些$Taylor$级数（都是在$z_0=0$点展开）在计算中会频繁用到，这里建议把每一个都自己手推一遍.
+        \begin{enumerate}
+            \item $e^z = \sum\dfrac{z^n}{n!},\ (|z|<\infty)$
+            \item $\dfrac{1}{1-z}=\sum z^n,\ (|z|<1)$
+            \item $\dfrac{1}{1+z}=\sum (-1)^n z^n,\ (|z|<1)$
+            \item $\sin{z}=\sum(-1)^n\dfrac{z^{2n+1}}{(2n+1)!},\ (|z|<\infty)$
+            \item $\cos{z}=\sum(-1)^n\dfrac{z^{2n}}{(2n)!},\ (|z|<\infty)$
+            \item $\ln{(1+z)}=\sum(-1)^n\dfrac{z^{n+1}}{n+1},\ (|z|<1)$
+            \item $(1+z)^\alpha=\sum\dfrac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}z^n=\sum\dbinom{\alpha}{n}z^n,\ (|z|<1)$
+        \end{enumerate}
 
-    \subsection{解析函数的零点孤立性和唯一性}
+        \begin{note}
+            这里补充一下普遍二项式的定义.
+            \begin{align*}
+                \binom{\alpha}{n}=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}
+            \end{align*}
+        \end{note}
 
 \section{Laurent级数}
     \subsection{Laurent级数的定义}
