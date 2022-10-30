@@ -58,19 +58,19 @@
             当$f$可微时，$f$与$z^*$无关，即$\dfrac{df}{dz^*} = 0$.
         \end{lemma}
         \begin{proof}
-            当$f$可微时，我们有$C-R$条件成立，于是有：
-            \allowdisplaybreaks
+            首先$z=x+iy,\ z^*=x-iy$于是我们可以得到$x=(z+z^*)/2,\ y=(z-z^*)/2i$.
             \begin{align*}
-                \frac{df}{dz^*} &= \frac{\partial v}{\partial (-y)} - i \frac{\partial u}{\partial (-y)}\\
-                &= -\frac{\partial v}{\partial y} + i \frac{\partial u}{\partial y}\\
-                &= -\frac{\partial u}{\partial x} - i \frac{\partial v}{\partial x}\\
-                &= \frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}
+                &x_{z^*}=\frac{1}{2},\quad y_{z^*}=-\frac{1}{2i}.\\
+                u_{z^*}&=u_x x_{z^*} + u_y y_{z^*}=\frac{1}{2}(u_x+iu_y),\\
+                v_{z^*}&=v_x x_{z^*} + v_y y_{z^*}=\frac{1}{2}(v_x+iv_y).
             \end{align*}
-            于是我们得到：
+            由于$f(z)=f(u,v)=u(x,y)+iv(x,y)$可微，则有$C-R$条件成立，即$u_x=v_y,\ v_x=-u_y$.\\
+            我们可以得到
             \begin{align*}
-                \frac{\partial u}{\partial x} = \frac{\partial v}{\partial x} = \frac{\partial u}{\partial y} = \frac{\partial v}{\partial y} = 0
+                \frac{df(u,v)}{dz^*}&=u_{z^*}+iv_{z^*}=\frac{1}{2}(u_x+iu_y)+\frac{i}{2}(v_x+iv_y)\\
+                &=\frac{1}{2}(u_x-v_y)+\frac{i}{2}(u_y+v_x)=0
             \end{align*}
-            即$\dfrac{f}{z^*} = 0$
+
         \end{proof}
         由引理\ref{lem:complex_function_differentiable_with_respect_to_z}，我们可以给出另外一种判断$f$是否可微的方法：
         \begin{example}
