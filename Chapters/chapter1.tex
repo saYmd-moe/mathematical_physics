@@ -53,12 +53,39 @@
             且在区域$G$上，$u$和$v$的一阶导存在且连续.
         \end{theorem}
 
+        \begin{proposition}\label{pro:complex_function_differential}
+            计算复变函数微分的时候大部分情况下都是直接使用与实变函数相同的求导公式，但当我们进行证明时可能会用到$f(x,y)=u(x,y)+iv(x,y)$的形式，现在给出复变函数微分的另一种形式.
+            \begin{align}
+                \frac{d f}{d z} &= u_x + iv_x \label{eqa:complex_differential}\\
+                &= v_y - iu_y
+            \end{align}
+            当然我们一般使用式\ref{eqa:complex_differential}的形式.
+        \end{proposition}
+        \begin{proof}
+            由$z=x+iy,\,z^*=x-iy$可得，$x=(z+z^*)/2,\,y=(z-z^*)/2$.
+            \begin{align}
+                \begin{split}
+                &x_z=\frac12,\ y_z=\frac1{2i}.\\
+                u_z&=u_x x_z + u_y y_z = \frac12 u_x + \frac1{2i} u_y,\\
+                v_z&=v_x x_z + v_y y_z = \frac12 v_x + \frac1{2i} v_y.
+                \end{split}
+            \end{align}
+            当$f(z)$可微时有$C-R$条件成立，即$u_x=v_y,\,v_x=-u_y$.我们可以得到
+            \begin{align*}
+                \frac{df(u,v)}{dz}&=u_z+iv_z\\
+                &=\frac12 u_x + \frac1{2i} u_y+i\left(\frac12 v_x + \frac1{2i} v_y\right)\\
+                &=\frac12 (u_x + v_y) + \frac i2 (- u_y + v_x)\\
+                &=u_x + iv_x\\
+                &=v_y - iu_y.
+            \end{align*}
+        \end{proof}
+
         \begin{lemma}
             \label{lem:complex_function_differentiable_with_respect_to_z}
             当$f$可微时，$f$与$z^*$无关，即$\dfrac{df}{dz^*} = 0$.
         \end{lemma}
         \begin{proof}
-            首先$z=x+iy,\ z^*=x-iy$于是我们可以得到$x=(z+z^*)/2,\ y=(z-z^*)/2i$.
+            这里的证明与命题\ref{pro:complex_function_differential}十分相似，首先$z=x+iy,\,z^*=x-iy\ x=(z+z^*)/2,\,y=(z-z^*)/2i$.
             \begin{align*}
                 &x_{z^*}=\frac{1}{2},\quad y_{z^*}=-\frac{1}{2i}.\\
                 u_{z^*}&=u_x x_{z^*} + u_y y_{z^*}=\frac{1}{2}(u_x+iu_y),\\
