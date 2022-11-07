@@ -1,6 +1,35 @@
 \chapter{留数定理}
 \section{留数}
     \subsection{留数的定义和留数定理}
+        设$z=z_0$为函数$f(z)$的孤立奇点，将$f(z)$在$z_0$的去心领域上展开为$Laurent$级数
+        \begin{align*}
+            f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n\equiv \sum_{n=0}^{\infty}a_n(z-z_0)^n + \frac{b_1}{z-z_0}+\frac{b_2}{z-z_0}+\cdots
+        \end{align*}
+        其中
+        \begin{align*}
+            a_n=\frac1{2\pi i}\oint_C \frac{f(\xi)d\xi}{(\xi - z_0)^{n+1}},\ b_n=\frac1{2\pi i}\oint_C f(\xi)(\xi - z_0)^{n-1}d\xi
+        \end{align*}
+        取其中的
+        \begin{align}
+            \label{eq:residue}
+            b_1=\frac1{2\pi i}\oint_C f(\xi)d\xi
+        \end{align}
+        我们就将$b_1$称为函数$f(z)$在点$z_0$处的留数，记作$\mathrm{Res} f(z_0)$.
+
+        式\ref{eq:residue}又可写作
+        \begin{align*}
+            \oint_C f(z)dz=2\pi i \mathrm{Res} f(z_0)
+        \end{align*}
+
+        \begin{theorem}[留数定理]\label{thm:residue_theorem}
+            令$C$为正向封闭曲线，函数$f$在$C$上连续解析，且$f$在$C$内只有有限个孤立奇点$z_1,\,z_2,\,\cdots,\,z_m$.则
+            \begin{align*}
+                \oint_C f(z)dz=2\pi i\sum_{k=1}^{m}\mathrm{Res}f(z_k)
+            \end{align*}
+        \end{theorem}
+
+        留数定理在计算某些形式的积分时有奇效，非常的方便，非常的简单.
+
     \subsection{留数的计算}
 
 \section{留数定理的应用}
@@ -10,4 +39,3 @@
     \subsection{更多的积分}
         \subsubsection{主值积分}
         \subsubsection{多值函数的积分}
-

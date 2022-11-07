@@ -36,7 +36,7 @@
 
     \subsection{复变函数的微分}
         判断一个复变函数是否可微，我们有Cauchy-Riemann条件：
-        \begin{theorem}[Cauchy-Riemann条件]\label{the:Cauchy-Riemann_condition}
+        \begin{theorem}[Cauchy-Riemann条件]\label{thm:Cauchy-Riemann_condition}
             对于复变函数$f(z) = u(x,y) + iv(x,y)$，如果对于点$z_0$，有
             \begin{align}
                 \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad and \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
@@ -45,7 +45,7 @@
         \end{theorem}
 
         注意$Cauchy-Riemann$条件仅是$f$可微的必要不充分条件，这里给出判断$f$可微的充要条件：
-        \begin{theorem}\label{the:differentiability_of_complex_function}
+        \begin{theorem}\label{thm:differentiability_of_complex_function}
             复变函数$f(z) = u(x, y) + iv(x, y)$在区域$G$上可微的充要条件为，$C-R$条件成立：
             \begin{align*}
                 \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad and \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
@@ -124,7 +124,7 @@
         \begin{definition}[奇点]\label{def:singular_point}
             若$f$在某一点$z_0$处不解析，则称$z_0$为$f$的奇点.
         \end{definition}
-        \begin{theorem}[Laplace 方程]\label{the:Laplace_equation}
+        \begin{theorem}[Laplace 方程]\label{thm:Laplace_equation}
             若$f$在某一区域$G$上解析，则$f$在$G$上满足拉普拉斯方程：
             \begin{align*}
                 \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0. \quad \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} = 0
@@ -289,7 +289,7 @@
 \section{复变函数的积分}
 
     \subsection{复积分}
-        \begin{definition}[复积分]\label{the:complex_integral}
+        \begin{definition}[复积分]\label{thm:complex_integral}
             复积分可以简单定义为：
             \begin{align*}
                 \int_{\alpha_1}^{\alpha_2}f(z)dz 
@@ -345,7 +345,7 @@
         \end{proof}
 
     \subsection{柯西定理}
-        \begin{theorem}[Cauchy 定理]\label{the:cauchy_theorem}
+        \begin{theorem}[Cauchy 定理]\label{thm:cauchy_theorem}
             若$f:\mathbbm{C}\to\mathbbm{C}$在闭合曲线$C$及$C$内的所有点上解析，
             则有:
             \begin{align*}
@@ -399,7 +399,7 @@
         \end{lemma}
 
     \subsection{柯西积分公式}
-        \begin{theorem}[Cauchy积分公式]\label{the:cauchy_integral_formula}
+        \begin{theorem}[Cauchy积分公式]\label{thm:cauchy_integral_formula}
             （Cauchy Integral Formula，简称CIF）设函数$f:\mathbbm{C} \to \mathbbm{C}$
             在闭合曲线$C$上解析，则对$C$内任一个点$z = z_0$，都有
             \begin{align*}
@@ -441,7 +441,7 @@
             f(z) = \frac{1}{2\pi i}\int_C \frac{f(\xi)d\xi}{\xi - z}.
         \end{align*}
 
-        \begin{theorem}[解析函数的高阶导数]\label{the:analytic_function_derivative}
+        \begin{theorem}[解析函数的高阶导数]\label{thm:analytic_function_derivative}
             对上式求$n$阶导我们可以得到解析函数的$n$阶导公式：
             \begin{align*}
                 f^{(n)}(z) = \frac{d^n f}{dz^n} = \frac{n!}{2\pi i}\oint_C \frac{f(\xi)d\xi}{(\xi - z)^{n + 1}}
@@ -460,7 +460,7 @@
         \end{example}
         \begin{solution}
             $z = -1$为$|z + 1| < 1$内的一个奇点，$\dfrac{1}{z - 2}$在$|z + 1| < 1$内解析，
-            由定理\ref{the:analytic_function_derivative}，我们有
+            由定理\ref{thm:analytic_function_derivative}，我们有
             \begin{align*}
                 \oint_{|z + 1| = 1}\frac{\frac{1}{z - 2}}{(z + 1)^2}dz = 2\pi i\left( \frac{1}{z - 2} \right)'\Bigg|_{z=-1} = -\frac{2}{9}\pi i
             \end{align*}
