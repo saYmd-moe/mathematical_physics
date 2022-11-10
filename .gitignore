@@ -319,5 +319,4 @@ Blog
 About
 Copied!
 
-release/
-/*.pdf
+*.pdf
