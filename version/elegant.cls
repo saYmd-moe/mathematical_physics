@@ -9,6 +9,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{enumerate}
 
+
 %封面设置
 \title{数学物理方法简明讲义}
 \definecolor{customcolor}{RGB}{32,178,170}
