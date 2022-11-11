@@ -28,10 +28,41 @@
             \end{align*}
         \end{theorem}
 
-        留数定理在计算某些形式的积分时有奇效，非常的方便，非常的简单.
+        仔细观察可能会发现，留数定理和$CIF$(定理\ref{thm:cauchy_integral_formula})有十分甚至九分相似，实际上留数定理就是通过$CIF$及其引理小圆弧引理(引理\ref{lem:small_arc_lemma})证明来的，下一节中给出的求留数的方法使得留数定理在计算某些形式的积分时有奇效，非常的方便，非常的简单.
 
     \subsection{留数的计算}
+        对函数进行$Laurent$展开后直接取$(z-z_0)^{-1}$项的系数是求留数最通用的方法，但是这种方法德川用了都喊牡蛎，由以下命题我们可以非常简便地求出留数.
+
+        \begin{proposition}\label{prop:poles_of_rational_function}
+            一个在有限域内所有奇点都是极点的复变函数是一个有理函数($rational function$).
+        \end{proposition}
+
+        补充一下有理函数的定义.
+
+        \begin{definition}
+            形如$f(z)=P(z)/Q(z)$的函数被称作有理函数，其中$P(z)$和$Q(z)$均是关于$z$的多项式.
+        \end{definition}
         
+        关于命题\ref{prop:poles_of_rational_function}的证明可以参考Sadri Hassani的$Mathematical Physics PartI, p343$.
+
+        由命题\ref{prop:poles_of_rational_function}，对于一个有$m$阶奇点$z=z_0$的复变函数$f$，另一个函数$g(z)\equiv (z-z_0)^mf(z)$在$z_0$处解析.由此，对于包含$z_0$的封闭路径$C$，有
+        \begin{align*}
+            Res[f(z_0)]=\frac1{2\pi i}\oint_{C}f(z)dz=\frac1{2\pi i}\oint_C \frac{g(z)dz}{(z-z_0)^m}=\frac{g^{(m-1)}(z_0)}{(m-1)!}
+        \end{align*}
+
+        我们可以给出留数的计算定理.
+
+        \begin{theorem}
+            复函数$f$有$m$阶极点$z_0$，则
+            \begin{align*}
+                Res\left[f(z_0)\right]=\frac1{(m-1)!}\lim_{z\to z_0}\frac{d^{m-1}}{dz^{m-1}}\left[(z-z_0)^mf(z)\right].
+            \end{align*}
+        \end{theorem}
+
+        当$m=1$时
+        \begin{align*}
+            Res\left[f(z_0)\right]=\lim_{z\to z_0}\left[(z-z_0)f(z)\right].
+        \end{align*}
 
 \section{留数定理的应用}
     \subsection{有理函数的积分}
