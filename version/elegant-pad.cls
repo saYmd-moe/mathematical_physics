@@ -15,8 +15,8 @@
 \colorlet{coverlinecolor}{customcolor}
 \author{saYmd}
 \date{\today}
-\version{a3.0}
-\cover{cover.png}
+\version{0.3.1 alpha}
+\cover{cover.jpg}
 \logo{logo.jpg}
 
 \setcounter{tocdepth}{2} %设置目录深度
