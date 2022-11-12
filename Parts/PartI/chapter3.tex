@@ -142,17 +142,53 @@
         这里直接上作业册留数定理中的最后一题（据称这题曾是考试题，可以多留意一下）.
         \begin{example}\label{ex:multi_valued}
             \begin{align*}
-            \text{计算积分：}\int_0^\infty \frac{x^{a-1}}{1-x}dx
+            \text{计算积分：}\int_0^\infty \frac{x^{a-1}}{1-x}dx.
             \end{align*}
         \end{example}
 
-        \begin{solution}
-            首先取被积函数$f(z)=z^{a-1}/(1-z)$.被积函数$f(z)$有两个枝点$z=0,\ z=\infty$，所以我们取割线$0\to +\infty$沿$x$轴.同时$f(z)$有一阶奇点$z=1$，我们如图\ref{fig:MultivalueIntPath}取积分环路.
-        \end{solution}
         \begin{figure}
             \centering
             \includegraphics[width=0.5\textwidth]{MultivalueIntPath.png}
             \caption{例\ref{ex:multi_valued}积分路径}
             \label{fig:MultivalueIntPath}
         \end{figure}
-        
+
+        \begin{solution}
+            首先取被积函数$f(z)=z^{a-1}/(1-z)$.被积函数$f(z)$有两个枝点$z=0,\ z=\infty$，所以我们取割线$0\to +\infty$沿$x$轴.同时$f(z)$有一阶奇点$z=1$，我们如图\ref{fig:MultivalueIntPath}取积分环路.此时实积分被转化为沿环路的复积分.
+
+            \begin{align}
+                \begin{split}\label{eq:multi_valued_integral}
+                    I&=\oint_C f(z)dz\\ &=\int_{C_R}f(z)dz+\int_{C_\delta}f(z)dz+\int_{C_\epsilon}f(z)dz+\int_{C'_\epsilon}f(z)dz\\ &+\int_{\delta}^{1-\epsilon}f(x)dx+\int_{1+\epsilon}^{R}f(x)dx+\int_{Re^{2\pi i}}^{(1+\epsilon')e^{2\pi i}}f(x)dx+\int_{(1-\epsilon')e^{2\pi i}}^{\delta e^{2\pi i}}f(x)dx\\ &=0.
+                \end{split}
+            \end{align}
+
+            由大圆弧引理\ref{lem:large_arc_lemma}
+            \begin{align*}
+                \lim_{R\to\infty}f(z)dz=i\cdot\lim_{z\to\infty}zf(z)\cdot 2\pi=0.
+            \end{align*}
+
+            由小圆弧引理\ref{lem:small_arc_lemma}
+            \begin{align*}
+                &\lim_{\epsilon\to0}\int_{C_\epsilon}f(z)dz=i\cdot\lim_{z\to1}(z-1)f(z)\cdot\pi=-\pi i.\\
+                &\lim_{\epsilon'\to0}\int_{C_{\epsilon'}}f(z)dz=i\cdot\lim_{z\to e^{2\pi i}}(z-1)f(z)\cdot\pi=-\pi ie^{2(a-1)\pi i}.\\
+                &\lim_{\delta\to0}\int_{C_\delta}f(z)dz=i\cdot\lim_{z\to0}zf(z)\cdot\pi=0.
+            \end{align*}
+
+            同时又有
+            \begin{align*}
+                &\lim_{\substack{\delta\to0 \\ \epsilon\to0}}\int_{\delta}^{1-\epsilon}f(x)dx+\lim_{\substack{\epsilon \to0\\ R\to\infty}}\int_{1+\epsilon}^{R}f(x)dx=\int_{0}^{\infty}f(x)dx.\\
+                &\lim_{\substack{\epsilon' \to0 \\ R\to\infty}}\int_{Re^{2\pi i}}^{(1+\epsilon')e^{2\pi i}}f(x)dx+\lim_{\substack{\epsilon' \to0 \\ \delta\to0}}\int_{(1-\epsilon')e^{2\pi i}}^{\delta e^{2\pi i}}f(x)dx=e^{2a\pi i}\int_{\infty}^{0}f(x)dx.
+            \end{align*}
+
+            于是式\ref{eq:multi_valued_integral}被我们转化为
+            \begin{align*}
+                (1-e^{2a\pi i})\int_{0}^{\infty}\frac{x^{a-1}}{1-x}dx=\pi i+\pi ie^{2(a-1)\pi i}.
+            \end{align*}
+
+            解得
+            \begin{align*}
+                \int_{0}^{\infty}\frac{x^{a-1}}{1-x}dx=\pi \cos{a\pi}.
+            \end{align*}
+
+
+        \end{solution}
